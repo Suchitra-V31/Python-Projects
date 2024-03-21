@@ -1,3 +1,10 @@
+This qis a Python automation script which will
+    - log you into Pinterest
+    - search for the specified set of names 
+    - download the results in a file
+    - zip  them up
+    - send them to a certain email address
+
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -77,8 +84,8 @@ def zip_file():
     print('The files have been compressed')
 
 def mail_sent():
-    sender_mail = 'demo40247@gmail.com'
-    receivers_mail = ['suchitravelusamy@gmail.com']
+    sender_mail = 'sender mail'
+    receivers_mail = ['receiver's mail id']
     subject = "ZIP file"
     message = "Hi!!! I'm sending zipfile to you....."
 
@@ -91,7 +98,7 @@ def mail_sent():
     with open(zip_file_path,'rb') as file:
         msg.attach(MIMEApplication(file.read(), Name='final.zip'))
     
-    password="edyt tqbt potq kunt"
+    password="your password"
     smtpObj = smtplib.SMTP('smtp.gmail.com', 587) 
     smtpObj.starttls()  
     smtpObj.login(sender_mail, password)
@@ -120,11 +127,11 @@ try:
         EC.presence_of_element_located((By.CSS_SELECTOR, "input[type='email']"))
     )
 
-    driver.find_element(By.CSS_SELECTOR, "input[type='email']").send_keys("sec19ec102@sairamtap.edu.in")
+    driver.find_element(By.CSS_SELECTOR, "input[type='email']").send_keys("your mail id")
     time.sleep(3)
     driver.find_element(By.ID, "identifierNext").click()
     time.sleep(3)
-    driver.find_element(By.CSS_SELECTOR, "input[type='password']").send_keys("krishanth")
+    driver.find_element(By.CSS_SELECTOR, "input[type='password']").send_keys("your password")
     time.sleep(3)
     driver.find_element(By.ID, "passwordNext").click()
     time.sleep(3)

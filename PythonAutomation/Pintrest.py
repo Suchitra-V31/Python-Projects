@@ -1,10 +1,3 @@
-This qis a Python automation script which will
-    - log you into Pinterest
-    - search for the specified set of names 
-    - download the results in a file
-    - zip  them up
-    - send them to a certain email address
-
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
